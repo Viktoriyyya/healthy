@@ -1,0 +1,180 @@
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+  padding: 32px 40px;
+}
+
+.logo-healthy {
+  max-width: 110px;
+  max-height: 66px;
+}
+
+.green-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slide 14s linear infinite;
+  background-repeat: repeat-x;
+  background-image: url('./imgs/green_bg.png');
+  background-size: 2880px;
+  z-index: -2;
+}
+
+.gray-bg {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slide2 21s linear infinite;
+  background-repeat: repeat-x;
+  background-image: url('./imgs/gray_bg.png');
+  background-size: 2586px;
+  background-position: bottom;
+  z-index: -3;
+}
+
+.salad {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  width: fit-content;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.welcome {
+  max-width: 65%;
+  padding: 150px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.welcome__text {
+  color: white;
+  font-family: 'Jockey One';
+  font-size: 60px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.welcome__text span {
+  font-size: 64px;
+}
+
+.welcome__button {
+  width: fit-content;
+  background: #3e7435;
+  color: white;
+  border-radius: 16px;
+  padding: 8px 18px;
+  outline: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.14s linear;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.3);
+}
+
+.welcome__button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 10px 2px rgba(0,0,0,.2), 0 0 0 2px rgba(255,255,255,.7);
+}
+.welcome__button:active {
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+}
+
+.panels {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-bottom: 200px;
+}
+
+footer {
+  position: relative;
+  padding: 150px 40px 300px;
+}
+
+footer .green-bg, footer .gray-bg {
+  transform: scale(-1, -1);
+}
+
+footer .green-bg {
+  background-size: 2100px 100%;
+  animation: slide3 14s linear infinite;
+}
+
+.footer-link {
+  font-family: 'Karla', 'sans-serif';
+  font-size: 24px;
+  margin-top: 30px;
+  color: white;
+  line-height: 1.5;
+}
+
+.footer-link a {
+  color: #F0F354;
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2880px 0;
+  }
+}
+
+@keyframes slide2 {
+  from {
+    background-position: 0 bottom;
+  }
+  to {
+    background-position: -2586px bottom;
+  }
+}
+
+@keyframes slide3 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2100px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .welcome {
+    max-width: 100%;
+  }
+  .salad {
+    filter: brightness(.8);
+    right: -40%;
+  }
+}
